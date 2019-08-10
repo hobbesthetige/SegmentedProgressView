@@ -44,8 +44,14 @@ open class SegmentedProgressView: UIView, ProgressBarElementViewDelegate {
     
     var elementViews: [SegmentView] = []
     
-    public init(withItems items: [ProgressItem]!) {
+    public init(withItems items: [ProgressItem]) {
         self.items = items
+        super.init(frame: .zero)
+        self.backgroundColor = .clear
+    }
+    
+    public init() {
+        self.items = nil
         super.init(frame: .zero)
         self.backgroundColor = .clear
     }
@@ -98,9 +104,10 @@ open class SegmentedProgressView: UIView, ProgressBarElementViewDelegate {
             xOffset += elementWidth + horizontalSpace
         }
         
-        let elementView = elementViews[0]
-        delegate?.progressBar(willDisplayItemAtIndex: 0)
-        elementView.animate()
+        if let firstElement = elementViews.first {
+            delegate?.progressBar(willDisplayItemAtIndex: 0)
+            firstElement.animate()
+        }
     }
     
     public func progressBar(didFinishWithElement element: SegmentView) {
