@@ -54,7 +54,7 @@ open class SegmentView: UIView {
         let fillColor = progressTintColor ?? .gray
         
         let startPath = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: bounds.height, height: bounds.height), cornerRadius: bounds.height / 2).cgPath
-        let multiplicationFactor = item.progress < 1.0 && item.progress > 1.0 ? CGFloat(item.progress) : 1.0
+        let multiplicationFactor = item.progress < 1.0 && item.progress > 0.0 ? CGFloat(item.progress) : 1.0
         let width = bounds.width * multiplicationFactor
         var frame = bounds
         frame.size.width = width
