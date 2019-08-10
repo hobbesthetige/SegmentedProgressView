@@ -71,8 +71,8 @@ public class SegmentView: UIView {
         animation.toValue = endPath.cgPath
         animation.duration = self.item.duration
         animation.repeatCount = 1
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        animation.fillMode = kCAFillModeBoth
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        animation.fillMode = CAMediaTimingFillMode.both
         animation.isRemovedOnCompletion = false
         
         filledShape.add(animation, forKey: animation.keyPath)

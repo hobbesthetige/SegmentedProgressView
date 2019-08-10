@@ -107,7 +107,7 @@ public class SegmentedProgressView: UIView, ProgressBarElementViewDelegate {
         
         let elements = self.items ?? [ProgressItem(withDuration: 6) { print("finished 0") }]
         
-        if var index = elementViews.index(of: element) {
+        if var index = elementViews.firstIndex(of: element) {
             
             delegate?.progressBar(didDisplayItemAtIndex: index)
             
