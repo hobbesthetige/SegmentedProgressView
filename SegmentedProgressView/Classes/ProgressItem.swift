@@ -10,13 +10,15 @@ import Foundation
 
 open class ProgressItem {
     
-    public typealias CompletionHanlder = () -> ()
+    public typealias CompletionHandler = () -> ()
     
-    let duration: Double!
-    let handler: CompletionHanlder?
+    let duration: Double
+    let progress: Double
+    let handler: CompletionHandler?
     
-    public init(withDuration duration: Double, handler completion: CompletionHanlder? = nil) {
+    public init(duration: Double, progress: Double = 1, handler completion: CompletionHandler? = nil) {
         self.duration = duration
+        self.progress = progress
         self.handler = completion
     }
 }

@@ -80,7 +80,7 @@ open class SegmentedProgressView: UIView, ProgressBarElementViewDelegate {
     
     fileprivate func draw() {
         
-        let items = self.items ?? [ProgressItem(withDuration: 6) { print("finished 0") }]
+        let items = self.items ?? [ProgressItem(duration: 6) { print("finished 0") }]
         
         let horizontalSpace: Double = itemSpace ?? 6.0
         
@@ -112,7 +112,7 @@ open class SegmentedProgressView: UIView, ProgressBarElementViewDelegate {
     
     public func progressBar(didFinishWithElement element: SegmentView) {
         
-        let elements = self.items ?? [ProgressItem(withDuration: 6) { print("finished 0") }]
+        let elements = self.items ?? [ProgressItem(duration: 6) { print("finished 0") }]
         
         if var index = elementViews.firstIndex(of: element) {
             
