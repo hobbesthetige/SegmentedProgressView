@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ProgressItem {
+open class ProgressItem {
     
     public typealias CompletionHanlder = () -> ()
     

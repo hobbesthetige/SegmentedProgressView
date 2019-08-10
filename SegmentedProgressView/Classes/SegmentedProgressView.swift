@@ -8,11 +8,11 @@
 
 import Foundation
 
-public class SegmentedProgressView: UIView, ProgressBarElementViewDelegate {
+open class SegmentedProgressView: UIView, ProgressBarElementViewDelegate {
     
     public weak var delegate: ProgressBarDelegate?
     
-    override public var frame: CGRect {
+    override open var frame: CGRect {
         didSet {
             redraw()
         }
@@ -54,7 +54,7 @@ public class SegmentedProgressView: UIView, ProgressBarElementViewDelegate {
         super.init(coder: aDecoder)
     }
     
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         redraw()
     }

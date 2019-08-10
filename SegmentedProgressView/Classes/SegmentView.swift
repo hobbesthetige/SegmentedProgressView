@@ -21,7 +21,7 @@ public protocol ProgressBarElementViewDelegate: class {
 
 }
 
-public class SegmentView: UIView {
+open class SegmentView: UIView {
     
     weak var delegate: ProgressBarElementViewDelegate?
     let item: ProgressItem
